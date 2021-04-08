@@ -13,3 +13,18 @@ for value in ${!result[@]}
 do
 	result_array[$value]=${result[$value]}
 done
+for (( outer=1; outer<=4; outer++ ))
+do
+	for (( inner=1; inner<=4-1 ; inner++ ))
+	do
+		myinner=$(( inner+1 ))
+		if [[ ${result_array[inner]} -lt ${result_array[myinner]} ]]
+		then
+			temp=${result_array[inner]}
+			result_array[$inner]=${result_array[myinner]}
+			result_array[$myinner]=$temp
+			#echo ${random_number[inner]}
+			#echo ${random_number[myinner]}
+		fi
+	done
+done
