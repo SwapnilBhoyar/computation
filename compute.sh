@@ -5,3 +5,4 @@ read -p "Enter c:" c
 operation1=$(( (a+b)*c ))
 operation2=$(( a*b+c ))
 operation3=$(( a+b/c ))
+operation4=$(( a%b+c ))
